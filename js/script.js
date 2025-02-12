@@ -73,13 +73,15 @@ document.addEventListener('keydown', event => {
 
                     }
 
-                    // console.log(row, verification)
+                    console.log(row, verification)
                     if (verification === 6) {
                         playable++
                         document.getElementById('annonce').innerText = `Gagné, le mot était ${wordToFind}`
+                        document.getElementById('retry').innerHTML = `<a href="./index.html" class="btn btn-wide">Recommencer</a>`
                     }
                     if (verification !== 6 && row == 6) {
                         document.getElementById('annonce').innerText = `Perdu, le mot était ${wordToFind}`
+                        document.getElementById('retry').innerHTML = `<a href="./index.html" class="btn btn-wide">Recommencer</a>`
                     }
 
                 }
