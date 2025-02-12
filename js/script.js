@@ -11,8 +11,12 @@ fetch("./js/json1.json")
         let wordToFind = dictionnary.mots[Math.floor(Math.random() * 21)]
 
         document.addEventListener('keydown', event => {
+            let userType = event.key
+            console.log(userType)
+            Game()
+        })
 
-
+        function Game() {
 
             if (playable == 0) {
                 if (row < 7) {
@@ -42,31 +46,40 @@ fetch("./js/json1.json")
                         const wordToFindSplit = wordToFind.split('')
                         let verification = 0
 
-                        if (compare === true) {
 
-                            for (let i = 1; i <= 6; i++) {
-                                // console.log(word[i - 1], wordToFindSplit[i - 1])
-                                // Si une lettre = une lettre
-                                if (word[i - 1] === wordToFindSplit[i - 1]) {
-                                    // console.log(i)
-                                    let parent = document.getElementById(`row${row}`)
-                                    let childs = parent.getElementsByClassName(`letterbox${i}`)
-                                    // console.log(childs[0])
-                                    childs[0].classList.add('bg-green-900')
-                                    verification++
-                                }
+                        for (let i = 1; i <= 6; i++) {
+                            // console.log(word[i - 1], wordToFindSplit[i - 1])
+                            // Si une lettre = une lettre
+                            if (word[i - 1] === wordToFindSplit[i - 1]) {
+                                // console.log(i)
+                                let parent = document.getElementById(`row${row}`)
+                                let childs = parent.getElementsByClassName(`letterbox${i}`)
+                                // console.log(childs[0])
+                                childs[0].classList.add('bg-green-900')
+                                verification++
+                                document.getElementById(`${word[i - 1]}`).classList.add('bg-slate-400/15')
 
-                                // Si le mot inclut la lettre
+
+                                // Si le mot inclut la lettre plus largement
+                            } else {
                                 if ((wordToFindSplit.includes(word[i - 1]) === true) && (word[i - 1] !== wordToFindSplit[i - 1])) {
 
                                     let parent = document.getElementById(`row${row}`)
                                     let childs = parent.getElementsByClassName(`letterbox${i}`)
                                     // console.log(childs[0])
                                     childs[0].classList.add('bg-orange-800')
+                                    document.getElementById(`${word[i - 1]}`).classList.add('bg-slate-400/15')
 
+                                    // Opacité du clavier pour lettres inutiles
+                                } else {
+                                    document.getElementById(`${word[i - 1]}`).classList.add('opacity-30')
                                 }
+
                             }
+
                         }
+
+
 
                         // Affichage gagné ou perdu
                         console.log(row, verification)
@@ -94,7 +107,7 @@ fetch("./js/json1.json")
                 location.reload()
             }
 
-        })
+        }
 
         console.log(wordToFind)
     })
