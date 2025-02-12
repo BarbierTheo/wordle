@@ -5650,6 +5650,15 @@
   .max-h-screen {
     max-height: 100vh;
   }
+  .min-h-\[5rem\] {
+    min-height: 5rem;
+  }
+  .min-h-\[10rem\] {
+    min-height: 10rem;
+  }
+  .min-h-\[20rem\] {
+    min-height: 20rem;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -5751,6 +5760,9 @@
     &.rating-xl *:not(.rating-hidden) {
       width: calc(0.25rem * 4);
     }
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -6953,6 +6965,24 @@
   .bg-base-300 {
     background-color: var(--color-base-300);
   }
+  .bg-green-800 {
+    background-color: var(--color-green-800);
+  }
+  .bg-green-900 {
+    background-color: var(--color-green-900);
+  }
+  .bg-orange-600 {
+    background-color: var(--color-orange-600);
+  }
+  .bg-orange-700 {
+    background-color: var(--color-orange-700);
+  }
+  .bg-orange-800 {
+    background-color: var(--color-orange-800);
+  }
+  .bg-orange-900 {
+    background-color: var(--color-orange-900);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -7369,6 +7399,10 @@
   }
   .align-top {
     vertical-align: top;
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
