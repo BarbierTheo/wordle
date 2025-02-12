@@ -11,8 +11,6 @@ fetch("./js/json1.json")
         let wordToFind = dictionnary.mots[Math.floor(Math.random() * 21)]
 
         document.addEventListener('keydown', event => {
-            let userType = event.key
-            console.log(userType)
             Game()
         })
 
@@ -82,7 +80,7 @@ fetch("./js/json1.json")
 
 
                         // Affichage gagné ou perdu
-                        console.log(row, verification)
+                        // console.log(row, verification)
                         if (verification === 6) {
                             playable++
                             document.getElementById('annonce').innerText = `Gagné, le mot était ${wordToFind}`
