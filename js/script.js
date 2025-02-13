@@ -53,7 +53,7 @@ fetch("./js/json1.json")
                                 let parent = document.getElementById(`row${row}`)
                                 let childs = parent.getElementsByClassName(`letterbox${i}`)
                                 // console.log(childs[0])
-                                childs[0].classList.add('bg-green-900')
+                                childs[0].classList.add('bg-green-800/75')
                                 verification++
                                 document.getElementById(`${word[i - 1]}`).classList.add('bg-slate-400/15')
 
@@ -65,7 +65,7 @@ fetch("./js/json1.json")
                                     let parent = document.getElementById(`row${row}`)
                                     let childs = parent.getElementsByClassName(`letterbox${i}`)
                                     // console.log(childs[0])
-                                    childs[0].classList.add('bg-orange-800')
+                                    childs[0].classList.add('bg-yellow-400/15')
                                     document.getElementById(`${word[i - 1]}`).classList.add('bg-slate-400/15')
 
                                     // Opacité du clavier pour lettres inutiles
